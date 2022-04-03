@@ -4,11 +4,12 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/eminetto/curso-go/domain"
-	"github.com/eminetto/curso-go/domain/batizado"
-	"github.com/eminetto/curso-go/domain/churrasco"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+	"github.com/hardtalinne/curso-go/domain"
+	"github.com/hardtalinne/curso-go/domain/batizado"
+	"github.com/hardtalinne/curso-go/domain/churrasco"
+	"github.com/hardtalinne/curso-go/domain/junina"
 )
 
 func main() {
@@ -16,6 +17,7 @@ func main() {
 	r.Use(middleware.Logger)
 	r.Post("/churrasco", calculaFesta(churrasco.NewChurrasco()))
 	r.Post("/batizado", calculaFesta(batizado.NewBatizado()))
+	r.Post("/junina", calculaFesta(junina.NewJunina()))
 	http.ListenAndServe(":3000", r)
 }
 

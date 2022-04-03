@@ -1,4 +1,4 @@
-module github.com/eminetto/curso-go
+module github.com/hardtalinne/curso-go
 
 go 1.18
 
